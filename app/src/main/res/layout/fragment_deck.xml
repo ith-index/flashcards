@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".deck.DeckFragment">
+
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineTopMargin"
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.05"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineBottomMargin"
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.95"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineContentSplitter"
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.6"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineLeftMargin"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.05"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineRightMargin"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.95"/>
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp" android:id="@+id/textViewName"
+            tools:text="Times Table"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTopMargin"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineContentSplitter" android:gravity="center"
+            app:autoSizeTextType="uniform" android:layout_marginBottom="8dp" android:maxLines="1"/>
+    <TextView
+            android:layout_width="0dp"
+            android:id="@+id/textViewNumberOfFlashcards"
+            tools:text="42 Flashcards"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
+            app:layout_constraintBottom_toTopOf="@+id/buttonReview"
+            app:layout_constraintTop_toTopOf="@+id/guidelineContentSplitter"
+            android:maxLines="1" android:layout_height="0dp" app:autoSizeTextType="uniform"
+            android:gravity="center_horizontal" app:autoSizeMaxTextSize="50sp"/>
+    <Button
+            android:text="@string/button_review"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonReview"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineBottomMargin" android:enabled="false"/>
+</android.support.constraint.ConstraintLayout>

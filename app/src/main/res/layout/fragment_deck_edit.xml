@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             android:focusableInTouchMode="true"
+                                             tools:context=".decks.DeckFragment">
+
+
+    <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:id="@+id/divider1"
+            android:background="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDeckName"
+            app:layout_constraintBottom_toTopOf="@+id/editTextFlashcardFront" android:layout_marginBottom="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+    />
+    <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:id="@+id/divider2"
+            android:background="@color/colorAccent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextFlashcardFront"
+            app:layout_constraintBottom_toTopOf="@+id/editTextFlashcardBack"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonAddFlashcard"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+            android:layout_marginTop="8dp" android:layout_marginBottom="8dp" android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineMarginTop"
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.05"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineMarginBottom"
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.95"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineLeftMargin"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.05"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineRightMargin"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.95"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/editTextDeckName"
+            android:background="@android:color/transparent"
+            android:hint="@string/hint_deck_name"
+            tools:ignore="Autofill"
+            app:layout_constraintTop_toTopOf="@+id/guidelineMarginTop"
+            app:layout_constraintBottom_toTopOf="@+id/divider1"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
+            app:layout_constraintVertical_chainStyle="spread_inside" android:layout_marginBottom="8dp"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/editTextFlashcardFront"
+            android:background="@android:color/transparent"
+            android:hint="@string/hint_flashcard_front"
+            tools:ignore="Autofill"
+            app:layout_constraintTop_toBottomOf="@+id/divider1"
+            app:layout_constraintBottom_toTopOf="@+id/divider2" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonAddFlashcard" android:layout_marginRight="8dp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+    />
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/editTextFlashcardBack"
+            android:background="@android:color/transparent"
+            android:hint="@string/hint_flashcard_back"
+            tools:ignore="Autofill"
+            app:layout_constraintTop_toBottomOf="@+id/divider2"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerViewFlashcards" android:layout_marginBottom="16dp"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/imageButtonAddFlashcard"
+            android:layout_marginRight="8dp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"/>
+    <ImageButton
+            android:src="@drawable/ic_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="@color/colorAccent"
+            android:minWidth="50dp"
+            android:contentDescription="@string/content_description_add_flashcard"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:id="@+id/imageButtonAddFlashcard" app:layout_constraintStart_toEndOf="@+id/editTextDeckName"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
+            app:layout_constraintTop_toTopOf="@+id/editTextFlashcardFront"
+            android:layout_marginTop="8dp" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextFlashcardBack"/>
+    <android.support.v7.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/recyclerViewFlashcards"
+            app:layout_constraintTop_toBottomOf="@+id/editTextFlashcardBack"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineMarginBottom"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
+    >
+    </android.support.v7.widget.RecyclerView>
+</android.support.constraint.ConstraintLayout>

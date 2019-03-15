@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.card.MaterialCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_marginBottom="8dp">
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:minHeight="100dp" android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+        <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                              android:id="@+id/guidelineLeftMargin"
+                                              android:orientation="vertical" app:layout_constraintGuide_percent="0.05"/>
+        <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                              android:id="@+id/guidelineRightMargin"
+                                              android:orientation="vertical" app:layout_constraintGuide_percent="0.95"/>
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewName"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+                tools:text="Times Table"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
+                android:gravity="center" app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintBottom_toTopOf="@+id/textViewNumberOfFlashcards" android:textStyle="bold"/>
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewNumberOfFlashcards"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+                tools:text="42 Flashcards"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
+                android:gravity="center" app:layout_constraintTop_toBottomOf="@+id/textViewName"
+                app:layout_constraintHorizontal_bias="0.5"/>
+    </android.support.constraint.ConstraintLayout>
+</android.support.design.card.MaterialCardView>

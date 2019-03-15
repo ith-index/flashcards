@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             android:focusableInTouchMode="true"
+                                             tools:context=".decks.DeckFragment">
+
+
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineMarginTop"
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.05"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineMarginBottom"
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.95"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineLeftMargin"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.05"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineRightMargin"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.95"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/editTextDeckName"
+            android:background="@android:color/transparent"
+            android:hint="@string/hint_deck_name"
+            tools:ignore="Autofill"
+            app:layout_constraintTop_toTopOf="@+id/imageButtonAddDeck"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButtonAddDeck"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonAddDeck"
+    />
+    <ImageButton
+            android:src="@drawable/ic_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="@color/colorAccent"
+            android:minWidth="50dp"
+            android:contentDescription="@string/content_description_add_deck"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:id="@+id/imageButtonAddDeck" app:layout_constraintStart_toEndOf="@+id/editTextDeckName"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
+            app:layout_constraintTop_toTopOf="@+id/guidelineMarginTop"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerViewDecks" android:layout_marginBottom="16dp"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
+    <android.support.v7.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
+            android:id="@+id/recyclerViewDecks"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toBottomOf="@+id/imageButtonAddDeck"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineMarginBottom">
+    </android.support.v7.widget.RecyclerView>
+</android.support.constraint.ConstraintLayout>
